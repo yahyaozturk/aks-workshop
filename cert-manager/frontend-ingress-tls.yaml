@@ -2,7 +2,13 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: frontend
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
+  tls:
+  - hosts:
+    - frontend.13.74.69.238.nip.io
+    secretName: frontend-tls-secret
   rules:
   - host: frontend.13.74.69.238.nip.io
     http:

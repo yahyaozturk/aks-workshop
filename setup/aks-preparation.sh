@@ -4,13 +4,13 @@ az account show
 # login to azure with username and password
 az login
 
-# get latest available AKS version for <region>, do not forget to change <region>
+# get latest available AKS version for <region>, do not forget to change <region>, you can use "northeurope" for Europe regions
 version=$(az aks get-versions -l <region> --query 'orchestrators[-1].orchestratorVersion' -o tsv)
 
-# create resource group for AKS in the region, do not forget to change correct re<region>gion and <resource-group> name
+# create resource group for AKS in the region, do not forget to change correct <region> and <resource-group> , syntax should be {yourname}-aks-rg
 az group create --name <resource-group> --location <region>
 
-# create AKS service, do not forget to change <unique-aks-cluster-name> and provide <APP_ID>, <APP_SECRET> values, version is already set above
+# create AKS service, do not forget to change <unique-aks-cluster-name> and <region>, provide <APP_ID>, <APP_SECRET> values, version is already set above
 # option 1 - basic model
 az aks create --resource-group <resource-group> \
     --name <unique-aks-cluster-name> \
