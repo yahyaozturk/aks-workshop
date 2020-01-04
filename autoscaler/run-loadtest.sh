@@ -1,0 +1,1 @@
+docker run --rm -it azch/loadtest http://<public ip of order capture service>
