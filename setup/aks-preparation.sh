@@ -34,3 +34,18 @@ az aks create --resource-group <resource-group> \
     --load-balancer-sku basic \
     --service-principal <APP_ID> \
     --client-secret <APP_SECRET>
+
+
+
+    az aks create --resource-group yahya-aks-rg \
+    --name yahya-aks \
+    --location westeurope \
+    --kubernetes-version 1.17.0 \
+    --generate-ssh-keys \
+    --load-balancer-sku basic \
+    --service-principal <APP_ID> \
+    --client-secret <APP_SECRET>
+
+
+# to get kubeconfig 
+az aks get-credentials --name <unique-aks-cluster-name> --resource-group <resource-group>
